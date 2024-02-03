@@ -1,16 +1,28 @@
+// App.js
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; 
-import { AppProvider } from './context/AppContext';
-import CartValue from './components/CartValue';
-import ExpenseList from './components/ExpenseList';
-import ItemSelected from './components/ItemSelected';
-import Location from './components/Location';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { AppProvider } from './context/AppContext.js';
+import Budget from './components/Budget.js';
+import AllocationTable from './components/AllocationTable.js';
+import ChangeAllocation from './components/ChangeAllocation.js';
+import ExpenseItem from './components/ExpenseItem.js';
+import Location from './components/Location.js';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-    </div>
+    <AppProvider>
+      <div className='container'>
+        <h1 className='mt-3'>Company's Budget Allocation</h1>
+        <Budget />
+        <h3 className='mt-3'>Allocation</h3>
+        <AllocationTable />
+        <h3 className='mt-3'>Change Allocation</h3>
+        <ChangeAllocation />
+        <h3 className='mt-3'>Location</h3>
+        <Location />
+      </div>
+    </AppProvider>
   );
-}
+};
 
 export default App;
